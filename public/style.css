@@ -1,0 +1,288 @@
+div#content {
+    max-width: 97.5%;
+    overflow: hidden;
+    margin: auto;
+}
+
+div#header {
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+}
+
+#header img {
+    width: 80px;
+    max-width: 28vw;
+}
+
+#header p {
+    font-family: 'Comfortaa', sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+    color: #704cf5;
+    max-width: 70vw;
+    margin-left: 10px;
+}
+
+
+div.btn {
+    font-family: 'Comfortaa', sans-serif;
+    font-weight: bolder;
+    background-color: #704cf5;
+    color: #fff;
+    font-size: 1em;
+    padding: 0.25em 1.25em;
+    border-radius: 2em;
+    margin: 0.2em;
+    height: fit-content;
+    text-align: center;
+}
+
+div.btn p {
+    margin: auto;
+    text-align: center;
+}
+
+div.btn:hover {
+    cursor: pointer;
+    background-color: #EB57C7;
+}
+
+div#melody-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+div#melody-board, div#notes-controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+div#melody-board > button, div#notes-controls > button {
+    margin: 3px 4px;
+}
+
+div#notes-input {
+    width: fit-content;
+    margin: 0.5em auto;
+    display: flex;
+}
+
+.note-box {
+    background: #FECFFF;
+    width: 9vw;                     /*include at least 10 spaces on screen: 10vw [100/8] - 2*0.5vw [margin]*/
+    height: 9vw;
+    max-width: 60px;
+    max-height: 60px;
+    margin-left: min(0.5vw, 5px);
+    margin-right: min(0.5vw, 5px);
+
+    font-family: 'Libre Baskerville', serif;
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    line-height: min(9vw, 60px);
+    overflow-wrap: initial;
+}
+
+div#feedback {
+    display: flex;
+    justify-content: center;
+    margin-top: 0.5em;
+    font-family: 'Comfortaa', sans-serif;
+    color: #704CF5;
+    font-size: 1.5em;
+    font-weight: bolder;
+    height: 1.5em;
+    line-height: 1.5em;
+}
+
+
+
+.entry-content.clear {
+    overflow: hidden;
+}
+
+div#keyboard-wrapper {
+    max-width: 100%;
+    margin: 3em auto;
+    overflow-x: scroll;
+}
+
+div#keyboard {
+    white-space: nowrap;
+    /* margin-left: -200px; */
+}
+
+.note-white {
+    display: inline-block;
+    box-sizing: border-box;
+    background: #f3f3f3;
+    border: 2px solid #aaaaaa;
+    border-radius: 100%;
+    width: 11vw;        /*include at least 8 white notes on screen: 12.5vw [100/8] - 2*0.5vw [margin] -0.5vw [for safety]*/
+    height: 11vw;
+    max-width: 100px;
+    max-height: 100px;
+    margin: min(0.5vw, 5px);
+    cursor: pointer;
+}
+
+.note-black {
+    display: inline-block;
+    box-sizing: border-box;
+    background: #666;
+    border: 2px solid #000;
+    border-radius: 100%;
+    width: 11vw;
+    height: 11vw;
+    max-width: 100px;
+    max-height: 100px;
+    margin: min(0.5vw, 5px);
+    cursor: pointer;
+
+    margin-bottom: min(11.5vw, 105px);              /*raise the note by the same amount as the notes' height*/
+    margin-right: calc(0px - min(5.75vw, 52.5px));  /*move back the following note by half the notes' width*/
+    margin-left: calc(0px - min(5.75vw, 52.5px));   /*move back the note by half the notes' width*/
+}
+
+
+.possible {
+    border: 5px solid #EB57C7;
+}
+
+.first {
+    box-shadow: inset 0 0 0 2000px #fecfff8c;
+}
+
+
+
+
+h2.options {
+    color: #704CF5;
+    font-family: 'Libre Baskerville', serif;
+    font-weight: bolder;
+    margin: 40px auto 10px auto;
+    display: table;
+}
+
+div#options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    font-family: 'Libre Baskerville', serif;
+}
+
+.option-wrapper {
+    margin: 10px 30px;
+    padding: 5px;
+}
+
+div#notes-intervals {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+div#notes-intervals > div {
+    margin: 0 1.2em 0 0;
+}
+
+#notes-intervals input {
+    margin-right: 0.25em;
+}
+
+
+/* ALERT MODAL */
+div#next-alert {
+    display: none;
+    z-index: 1;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.3);
+}
+
+div.modal-content {
+    background-color: #fff;
+    width: fit-content;
+    max-width: 90vw;
+    padding: 2em;
+    border-radius: 20px;
+    box-shadow: 0 0 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.modal-content p {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 1.1em;
+}
+
+div#modal-buttons {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+
+
+/* SCROLLBAR */
+::-webkit-scrollbar {
+    width: 10px;  /* width of the scrollbar */
+    height: 10px;
+}
+  
+::-webkit-scrollbar-thumb {
+    background: #d9ceff;  /* color of the thumb */
+    border-radius: 5px; /* roundness of the thumb */
+}
+  
+::-webkit-scrollbar-thumb:hover {
+    background: #af99ff;  /* color of the thumb on hover */
+}
+  
+::-webkit-scrollbar-track {
+    background: #f4f4f4; /* color of the track */
+}
+  
+::-webkit-scrollbar-track:hover {
+    background: #f4f4f4;  /* color of the track on hover */
+}
+
+::-webkit-scrollbar-button {
+    display: none;  /* hide arrows */
+}
+  
+
+
+/* MAIN PAGE RESPONSIVE */
+
+/* avoid flat symbol getting out of the note box */
+@media only screen and (max-width: 450px) {
+    .note-box {
+        font-size: 1.5em;
+        font-weight: bolder;
+    }
+}
+
+
+@media (orientation: landscape) {
+    div#keyboard-wrapper {
+        margin: 1em auto;
+    }
+}
+
+/* fix modal opacity alignment */
+/* @media only screen and (max-width: 1230px) {
+    div#next-alert {
+        left: 0;
+    }
+} */

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Melodictat</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="logo.png">
+</head>
+<body>
+
+    <div id ="content">
+        <div id="header"><img src="logo.png" alt="Melodictat logo"> <p>Melodictat</p></div>
+
+        <div id="board">
+            <div id="melody-controls">
+                <div class="btn" id="btn-start"><p>START</p></div>
+                <div id="melody-board">
+                    <div class="btn" id="btn-play"><p>replay melody</p></div>
+                    <div class="btn" id="btn-stop"><p>stop</p></div>
+                    <div class="btn" id="btn-replay"><p>replay answer</p></div>
+                </div>
+                <div class="btn" id="btn-next"><p>NEXT</p></div>
+            </div>
+            <div id="notes-input"></div>
+            <div id="notes-controls">
+                <div class="btn" id="btn-reveal"><p>reveal answer</p></div>
+                <div class="btn" id="btn-confirm"><p>CONFIRM</p></div>
+                <div class="btn" id="btn-delete"><p>delete</p></div>
+            </div>
+            <div id="feedback"></div>
+        </div>
+
+        <div id="keyboard-wrapper"><div id="keyboard"></div></div>
+
+        <h2 class="options">Options</h2>
+        <div id="options">
+            <div class="option-wrapper">
+                <label for="root-note">Root note:</label>
+                <select name="root-note" id="root-note">
+                    <option value="random">random</option>
+                </select>
+            </div>
+
+            <div class="option-wrapper">
+                <label for="notes-number">Number of notes in the melody:</label>
+                <select name="notes-number" id="notes-number"></select>
+            </div>
+
+            <div class="option-wrapper">
+                Choose which notes to include in the exercise (in addition to the root note):<br>
+                <div id="notes-intervals"></div>
+            </div>
+
+            <div class="option-wrapper">
+                <label for="tempo">Tempo:</label>
+                <select name="tempo" id="tempo">
+                    <option value="60">Slow (60 bpm)</option>
+                    <option value="80">Medium (80 bpm)</option>
+                    <option value="120">Fast (120 bpm)</option>
+                </select>
+            </div>
+
+            <div class="option-wrapper">
+                <input type="checkbox" id="highlight" name="highlight" value="highlight">
+                <label for="highlight"> Highlight possible notes</label>
+            </div>
+
+            <div class="option-wrapper">
+                <input type="checkbox" id="first" name="first" value="first" checked="">
+                <label for="first"> Show first note of the melody</label><br>
+            </div>
+        </div>
+
+
+
+        <div id="next-alert">
+            <div class="modal-content">
+                <p>Are you sure you would like to continue without knowing the correct answer?</p>
+
+                <div id="modal-buttons">
+                    <div class="btn" id="btn-yes">Yes, continue</div>
+                    <div class="btn" id="btn-no">No, go back</div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+          window.addEventListener('load', () => {
+            navigator.serviceWorker.register('service-worker.js')
+              .then(registration => {
+                console.log('Service Worker registered with scope:', registration.scope);
+              })
+              .catch(error => {
+                console.error('Service Worker registration failed:', error);
+              });
+          });
+        }
+      </script>
+      
+
+</body>
+</html>
