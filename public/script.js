@@ -1,5 +1,3 @@
-console.log('hello');
-
 // NOTE CLASS
 class Note {
     constructor(order, name, octave) {
